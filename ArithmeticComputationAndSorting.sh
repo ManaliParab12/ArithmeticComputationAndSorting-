@@ -27,3 +27,11 @@ Arithmetic[compute3]="$compute3"
 Arithmetic[compute4]="$compute4"
 
 echo "Every computation result in Dictionary : " ${Arithmetic[@]}
+
+index=0
+for i in "${Arithmetic[@]}"
+do
+       arr[index++]=$i
+done
+
+echo "Array Result" ${arr[@]}
