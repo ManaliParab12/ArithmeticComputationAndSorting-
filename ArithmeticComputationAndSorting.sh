@@ -35,3 +35,27 @@ do
 done
 
 echo "Array Result" ${arr[@]}
+
+size=${#arr[@]}
+echo "Size of array" $size
+
+function Descending() {
+
+for (( i=0; i<$size-1; i++ ))
+do
+   for (( j=0; j<$size-$i-1; j++ ))
+   do
+     if [[ ${arr[$j]} -lt ${arr[$j+1]} ]]
+     then
+        temp=${arr[$j]}
+        arr[j]=${arr[$j+1]}
+        arr[j+1]=$temp
+     fi
+   done
+done
+
+echo "Result in Descending Order : " ${arr[@]}
+}
+
+Descending
+
