@@ -7,11 +7,15 @@ read -p "Enter First Input : " num1
 read -p "Enter Second Input : " num2
 read -p "Enter Third Input : " num3
 
-compute=`echo "scale=2; $num1+$num2*$num3" | bc`
-echo "Result : " $compute
+compute1=`echo $(($num1+$num2*$num3))`
+echo "Result of a + b * c : " $compute1
 
-compute=`echo "scale=2; $num1*$num2+$num3" | bc`
-echo "Result : " $compute
+compute2=`echo $(($num1*$num2+$num3))`
+echo "Result of a * b + c : " $compute2
 
-compute=`echo "scale=2; $num3+$num1/$num2" | bc`
-echo "Result : " $compute
+compute3=`echo $(($num3+$num1/$num2))`
+echo "Result of c + a / b : " $compute3
+
+compute4=`echo $(($num1%$num2+$num3))`
+echo "Result of a % b + c: " $compute4
+
