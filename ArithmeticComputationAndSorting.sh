@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+declare -A Arithmetic
+
 echo "Welcome to Arithmetic Computation And Sorting"
 
 
@@ -19,3 +21,9 @@ echo "Result of c + a / b : " $compute3
 compute4=`echo $(($num1%$num2+$num3))`
 echo "Result of a % b + c: " $compute4
 
+Arithmetic[compute1]="$compute1"
+Arithmetic[compute2]="$compute2"
+Arithmetic[compute3]="$compute3"
+Arithmetic[compute4]="$compute4"
+
+echo "Every computation result in Dictionary : " ${Arithmetic[@]}
